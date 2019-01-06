@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Aby przejsc do następnej strony kliknij jeden z poniższych linków: (proszę zwrócić uwagę na adres nowej strony!)
+        <br/>
+        <h:form>
+            <h:commandLink action="page1" value="Do strony pierwszej"/> &nbsp; &nbsp;
+            <h:commandLink action="page2" value="Do strony drugiej"/>
+        </h:form>
+        <br/>
+        Poniżej zamieszczono przykład nawigacji konfigurowalnej (patrz faces-config.xml oraz NavigationBean). (Prosze zwrócić uwagę na adres nowej strony!)
+        <br/>
+        "p1" || "page1" || "page 1" || "1" -> przejście do page1.xhtml
+        <br/>
+        "p2" || "page2" || "page 2" || "2" -> przejście do page2.xhtml
+        <h:form>
+            <h:inputText value="#{navigatorBean.input}"/>
+            <h:commandButton value="Klik" action="#{navigatorBean.getDirection()}" />
+        </h:form>
+        
+        <br/>
+        Przykład wykorzystania komponentu:
+        <br/>
+        <table>
+            <tr>
+                <th >Imię i nazwisko</th>
+                <th >Data urodzenia</th>
+                <th >Liczba dzieci</th>
+            </tr>
+            <tbody>
+                <ui:repeat var="o" value="#{pseudoDataProviderBean.data}">
+
+                <tr>
+                    <td>#{o.name}</td>
+                    <td>#{o.birthDate}</td>
+                    <td>#{o.numberOfChildren}</td>
+                </tr>
+
+                </ui:repeat>
+            </tbody>
+        </table>
+    </h:body>
+</html>
+

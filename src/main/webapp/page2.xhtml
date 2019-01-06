@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet page1</title>
+    </h:head>
+    <body>
+        Strona druga.
+        <br/>
+        Aktualna wartośc InjectionChooserBean.someText to:
+        <br/>
+        <h:outputText value="${injectionChooserBean.someText}"/>
+        <br/>
+        Wartość zwracana z implementacji interfejsu MyInterface: <br/>(jeżeli InjectionChooserBean.someText == "FIRST" to wybierana jest FirstImplementation, jeżeli someText == "SECOND" to wybierana jest SecondImplementation))
+        <br/>
+        <h:outputText value="${beingInjectedBean.textFromImplementation()}"/>
+    </body>
+</html>

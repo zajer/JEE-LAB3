@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet page1</title>
+    </h:head>
+    <body>
+        <div>Strona pierwsza.</div>
+        <h:form>
+            <h:inputText id="input" value="#{injectionChooserBean.someText}">
+                <f:ajax event="keyup" render="output input" listener="#{injectionChooserBean.method1}"/>
+            </h:inputText>
+        </h:form>
+        Wartośc przechowywana w InjectionChooserBean (aktualizowana przez ajax).
+        <br/>
+        <h:outputText id="output" value="#{injectionChooserBean.someText}"/>
+        <br/>
+        Wartośc przechowywana w InjectionChooserBean (nieaktualizowana przez ajax).
+        <br/>
+        <h:outputText id="someOtherId" value="#{injectionChooserBean.someText}"/>
+    </body>
+</html>
